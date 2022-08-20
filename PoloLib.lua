@@ -1,11 +1,11 @@
 local library = {}
 
-function library:CreateWindow(wname) 
+function library:CreateWindow(wname, placeholdertext) 
     local ScreenGui = Instance.new("ScreenGui")
     ScreenGui.Name = "SCRIPT_HUB_MOSS"
     local MainGui = Instance.new("TextLabel")
     local Frame = Instance.new("Frame")
-	wfont = Enum.Font.SciFi
+	wfont = Enum.Font.Arcade
     --Properties:
 	local X = Instance.new("TextButton")
 
@@ -19,12 +19,12 @@ function library:CreateWindow(wname)
 	X.Size = UDim2.new(0, 40, 0, 26)
 	X.Font = wfont
 	X.Text = "X"
-	X.TextColor3 = Color3.fromRGB(255, 255, 255)
+	X.TextColor3 = Color3.fromRGB(255, 0, 0)
 	X.TextScaled = true
 	X.TextSize = 14.000
 	X.TextWrapped = true
 	X.ZIndex = 3
-	
+
 	X.MouseButton1Down:Connect(function()
 	ScreenGui:Destroy()
 	end)
@@ -48,6 +48,19 @@ function library:CreateWindow(wname)
     Frame.BorderColor3 = Color3.fromRGB(27, 27, 27)
     Frame.Position = UDim2.new(-0.000362274703, 0, 0.995461464, 0)
     Frame.Size = UDim2.new(0, 410, 0, 263)
+	local Placeholder = Instance.new("TextLabel")
+	Placeholder.Parent = Frame
+	Placeholder.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	Placeholder.BackgroundTransparency = 1.000
+	Placeholder.BorderSizePixel = 0
+	Placeholder.Position = UDim2.new(0.279611647, 0, 0.177681327, 0)
+	Placeholder.Size = UDim2.new(0, 299, 0, 199)
+	Placeholder.Font = wfont
+	Placeholder.Text = placeholdertext
+	Placeholder.TextColor3 = Color3.fromRGB(255, 255, 255)
+	Placeholder.TextScaled = true
+	Placeholder.TextSize = 14.000
+	Placeholder.TextWrapped = true
     local function MKHDTR_fake_script() -- MainGui.LocalScript 
         local script = Instance.new('LocalScript', MainGui)
     
@@ -114,3 +127,5 @@ function library:CreateWindow(wname)
     
     return PoloLib
 end
+
+return library
