@@ -1,11 +1,11 @@
 local library = {}
-
-function library:CreateWindow(wname, placeholdertext) 
+wfont = Enum.Font.Arcade
+function library:CreateWindow(wname, placeholdertext, wfont) 
     local ScreenGui = Instance.new("ScreenGui")
     ScreenGui.Name = "SCRIPT_HUB_MOSS"
     local MainGui = Instance.new("TextLabel")
     local Frame = Instance.new("Frame")
-	wfont = Enum.Font.Arcade
+
     --Properties:
 	local X = Instance.new("TextButton")
 
